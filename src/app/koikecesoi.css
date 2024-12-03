@@ -1,0 +1,50 @@
+h1{
+
+   color:green; 
+}
+
+p{
+
+    font-family: 'Times New Roman', Times, serif ;
+}
+
+img{
+
+    height: 400px;
+    width: 400px;
+}
+
+ul{
+
+    list-style-type: none;
+}
+
+body{
+    background-color: rgb(161, 161, 161);
+}
+
+.nova{
+    background-color: red ;
+   
+}
+
+#novaP{
+    text-align: center;
+    color: lavender;
+    size: 67px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+#novaimage {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width:min-content;
+     height: min-content;
+}
+
+#enchantblue{
+    color: blue;
+
+}
