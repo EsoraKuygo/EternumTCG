@@ -16,14 +16,20 @@ export class CardRepository {
     return this.repository.find();
   }
 
-  // /**
-  //  * Récupère toutes les cartes en fonction de leur couleur.
-  //  * @param color - Couleur des cartes.
-  //  * @returns Liste des cartes filtrées.
-  //  */
-  // async findByColor(color: string): Promise<CardEntity[]> {
-  //   return this.repository.find({ where: { color } });
-  // }
+/**
+ *
+ * recherche les cartes par couleur
+ * @param {string} colorName
+ * @return {*}  {Promise<CardEntity[]>}
+ * @memberof CardRepository
+ */
+async findByColor(colorName: string): Promise<CardEntity[]> {
+    return this.repository
+      .createQueryBuilder('card')
+      .innerJoinAndSelect('card.colors', 'color') // Jointure avec la table Color
+      .where('color.name = :colorName', { colorName }) // Filtrer par nom de couleur
+      .getMany();
+  }
 
   // /**
   //  * Récupère toutes les cartes en fonction de leur type.
