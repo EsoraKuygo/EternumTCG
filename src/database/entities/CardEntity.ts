@@ -8,26 +8,17 @@ export class CardEntity {
   @Column({ type: "varchar", nullable: false })
   name!: string;
 
-  @Column({ type: "varchar", nullable: false, array: true })
-  color!: string[];
-
   @Column({ type: "int", nullable: false })
-  cost!: number;
+  mana_cost!: number;
 
   @Column({ type: "varchar", nullable: false })
-  type!: string;
-
-  @Column({ type: "varchar", nullable: true })
-  supertype!: string;
+  type_id!: number;
 
   @Column({ type: "varchar", nullable: false })
-  rarity!: string;
+  rarity_id!: number;
 
   @Column({ type: "varchar", nullable: false })
   img!: string;
-
-  @Column({ type: "varchar", nullable: true, array: true })
-  keywords?: string[];
 
   @Column({ type: "varchar", nullable: true })
   rulesText?: string;
@@ -36,13 +27,22 @@ export class CardEntity {
   flavorText?: string;
 
   @Column({ type: "int", nullable: true })
-  loyalty?: number | null | undefined;
-
-  @Column({ type: "int", nullable: true })
   power?: number;
 
   @Column({ type: "int", nullable: true })
   defense?: number;
+
+  @Column({ type: "varchar", nullable: true })
+  loyalty?: number | null | undefined;
+
+  @Column({ type: "varchar", nullable: true })
+  cap_1?: string| null | undefined;
+
+  @Column({ type: "varchar", nullable: true })
+  cap_2?: string| null | undefined;
+
+  @Column({ type: "varchar", nullable: true })
+  cap_3?: string| null | undefined;
 
   constructor(card?: Partial<CardEntity>) {
     if (card) {

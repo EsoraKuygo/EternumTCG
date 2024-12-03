@@ -1,10 +1,10 @@
 import { DataSourceOptions } from "typeorm";
 import dotenv from "dotenv";
+import { CardEntity } from "./entities/CardEntity";
 
 
 dotenv.config(); /* Charge les variables d'environnement. */
 const portDBContainer: number = parseInt(process.env.DB_PORT || "5432"); /* Port de la base de données. */
-const isDebug: boolean = process.env.DEBUG_TYPEORM === "true"; /* Détermine si le mode debug est activé. */
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const isDevelopment: boolean =
@@ -21,10 +21,10 @@ const dataSourceOptions: DataSourceOptions = {
   password: process.env.DB_PASS /* Mot de passe pour la connexion. */,
   database: process.env.DB_NAME /* Nom de la base de données. */,
   synchronize: true /* Synchronisation du schéma. */,
-  logging: isDebug /* Active les logs en mode debug. */,
+  logging: isDevelopment /* Active les logs en mode debug. */,
 
   /*  Entités à utiliser par TypeORM. */
-  entities: ["src/entities/**/*.ts"] /* Chemin vers les fichiers d'entité. */,
+  entities: [CardEntity] /* Chemin vers les fichiers d'entité. */,
 
   migrations: ["src/migrations/**/*.ts"] /* Chemin vers les fichiers de migration. */,
   subscribers: ["src/subscribers/**/*.ts"] /* Chemin vers les fichiers de subscriber. */,

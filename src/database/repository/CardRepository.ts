@@ -16,23 +16,23 @@ export class CardRepository {
     return this.repository.find();
   }
 
-  /**
-   * Récupère toutes les cartes en fonction de leur couleur.
-   * @param color - Couleur des cartes.
-   * @returns Liste des cartes filtrées.
-   */
-  async findByColor(color: string): Promise<CardEntity[]> {
-    return this.repository.find({ where: { color } });
-  }
+  // /**
+  //  * Récupère toutes les cartes en fonction de leur couleur.
+  //  * @param color - Couleur des cartes.
+  //  * @returns Liste des cartes filtrées.
+  //  */
+  // async findByColor(color: string): Promise<CardEntity[]> {
+  //   return this.repository.find({ where: { color } });
+  // }
 
-  /**
-   * Récupère toutes les cartes en fonction de leur type.
-   * @param type - Type des cartes.
-   * @returns Liste des cartes filtrées.
-   */
-  async findByType(type: string): Promise<CardEntity[]> {
-    return this.repository.find({ where: { type } });
-  }
+  // /**
+  //  * Récupère toutes les cartes en fonction de leur type.
+  //  * @param type - Type des cartes.
+  //  * @returns Liste des cartes filtrées.
+  //  */
+  // async findByType(type: string): Promise<CardEntity[]> {
+  //   return this.repository.find({ where: { type } });
+  // }
 
   /**
    * Recherche les cartes dont le nom contient partiellement la chaîne donnée.
