@@ -66,4 +66,27 @@ async findByPartialName(partialName: string): Promise<CardEntity[]> {
     where: { name: ILike(`%${partialName}%`) }, // Insensible à la casse
   });
 }
+
+
+/**
+ * Recherche les cartes dont le nom contient partiellement la chaîne donnée.
+ * @param power - Partie du nom de la carte.
+ * @returns Liste des cartes correspondantes.
+ */
+async findByPower(power: number): Promise<CardEntity[]> {
+  return this.repository.find({
+    where: { attack: power, }// Insensible à la casse
+  });
+}
+
+/**
+ * Recherche les cartes dont le nom contient partiellement la chaîne donnée.
+ * @param DEFENSE - Partie du nom de la carte.
+ * @returns Liste des cartes correspondantes.
+ */
+async findByDefense(defense: number): Promise<CardEntity[]> {
+  return this.repository.find({
+    where: {defense: defense, }// Insensible à la casse
+  });
+}
 }
