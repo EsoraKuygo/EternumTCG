@@ -1,4 +1,4 @@
-import { DataSource, Repository, Like } from "typeorm";
+import { DataSource, Repository, ILike } from "typeorm";
 import { CardEntity } from "../entities/CardEntity";
 
 export class CardRepository {
@@ -40,14 +40,14 @@ async findByType(typeId: number): Promise<CardEntity[]> {
   return this.repository.find({ where: { type_id: typeId } });
 }
 
-  /**
-   * Recherche les cartes dont le nom contient partiellement la chaîne donnée.
-   * @param partialName - Partie du nom de la carte.
-   * @returns Liste des cartes correspondantes.
-   */
-  async findByPartialName(partialName: string): Promise<CardEntity[]> {
-    return this.repository.find({
-      where: { name: Like(`${partialName}%`) }, // Recherche par préfixe (commence par)
-    });
-  }
+/**
+ * Recherche les cartes dont le nom contient partiellement la chaîne donnée.
+ * @param partialName - Partie du nom de la carte.
+ * @returns Liste des cartes correspondantes.
+ */
+async findByPartialName(partialName: string): Promise<CardEntity[]> {
+  return this.repository.find({
+    where: { name: ILike(`%${partialName}%`) }, // Insensible à la casse
+  });
+}
 }
