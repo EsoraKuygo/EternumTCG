@@ -1,5 +1,6 @@
 import { Column, Entity, JoinTable, ManyToMany, PrimaryColumn } from "typeorm";
 import { Color } from "./Color";
+import { Keyword } from "./Keywords";
 
 @Entity({ name: "cards" })
 export class CardEntity {
@@ -52,6 +53,20 @@ export class CardEntity {
     inverseJoinColumn: { name: 'color_id', referencedColumnName: 'id' }, // Colonne correspondant à la couleur
   })
   colors!: Color[];
+
+/**
+ *
+ *
+ * @type {Keyword[]}
+ * @memberof CardEntity
+ */
+@ManyToMany(() => Keyword, (keyword) => keyword.cards) // Relation avec l'entité Color
+  @JoinTable({ // Définition de la table de jointure
+    name: 'card_keywords', // Nom de la table de jointure
+    joinColumn: { name: 'card_id', referencedColumnName: 'id' }, // Colonne correspondant à la carte
+    inverseJoinColumn: { name: 'keyword_id', referencedColumnName: 'id' }, // Colonne correspondant à la couleur
+  })
+  keywords!:Keyword[];
 
 
   constructor(card?: Partial<CardEntity>) {
