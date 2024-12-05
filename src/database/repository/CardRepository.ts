@@ -31,14 +31,14 @@ async findByColor(colorName: string): Promise<CardEntity[]> {
       .getMany();
   }
 
-  // /**
-  //  * Récupère toutes les cartes en fonction de leur type.
-  //  * @param type - Type des cartes.
-  //  * @returns Liste des cartes filtrées.
-  //  */
-  // async findByType(type: string): Promise<CardEntity[]> {
-  //   return this.repository.find({ where: { type } });
-  // }
+/**
+ * Récupère toutes les cartes en fonction de leur type.
+ * @param typeId - Identifiant du type des cartes.
+ * @returns Liste des cartes filtrées.
+ */
+async findByType(typeId: number): Promise<CardEntity[]> {
+  return this.repository.find({ where: { type_id: typeId } });
+}
 
   /**
    * Recherche les cartes dont le nom contient partiellement la chaîne donnée.

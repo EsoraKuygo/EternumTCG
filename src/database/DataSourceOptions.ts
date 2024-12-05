@@ -1,6 +1,7 @@
 import { DataSourceOptions } from "typeorm";
 import dotenv from "dotenv";
 import { CardEntity } from "./entities/CardEntity";
+import { Color } from "./entities/Color";
 
 
 dotenv.config(); /* Charge les variables d'environnement. */
@@ -24,7 +25,7 @@ const dataSourceOptions: DataSourceOptions = {
   logging: isDevelopment /* Active les logs en mode debug. */,
 
   /*  Entités à utiliser par TypeORM. */
-  entities: [CardEntity] /* Chemin vers les fichiers d'entité. */,
+  entities: [CardEntity, Color] /* Chemin vers les fichiers d'entité. */,
 
   migrations: ["src/migrations/**/*.ts"] /* Chemin vers les fichiers de migration. */,
   subscribers: ["src/subscribers/**/*.ts"] /* Chemin vers les fichiers de subscriber. */,
