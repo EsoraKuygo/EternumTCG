@@ -1,18 +1,16 @@
 h1{
 
    color:green; 
+   text-align: center;
+   font-size: 50px;
 }
 
 p{
 
     font-family: 'Times New Roman', Times, serif ;
+    font-size: 24px;
 }
 
-img{
-
-    height: 400px;
-    width: 400px;
-}
 
 ul{
 
@@ -23,8 +21,16 @@ body{
     background-color: rgb(161, 161, 161);
 }
 
+#lunabanderole{
+    height: 250px;
+    width: 500px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .nova{
-    background-color: red ;
+    background-color: rgb(202, 149, 50) ;
    
 }
 
@@ -42,9 +48,4 @@ body{
      margin-right: auto;
      width:min-content;
      height: min-content;
-}
-
-#enchantblue{
-    color: blue;
-
 }

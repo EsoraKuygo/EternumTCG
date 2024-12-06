@@ -1,0 +1,88 @@
+/* Navbar Styles */
+.navbar {
+    background-color: #007bff; /* Couleur de fond bleue */
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    color: #ffffff; /* Texte en blanc pour la marque */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-toggler {
+    border-color: #ffffff; /* Bordure blanche pour le bouton hamburger */
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff; /* Couleur de l'icône du hamburger */
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #ffffff; /* Liens en blanc */
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+}
+
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item .nav-link.active {
+    color: #f8f9fa; /* Couleur au survol et active */
+    background-color: rgba(255, 255, 255, 0.2); /* Légère couleur de fond au survol */
+}
+
+.nav-item.dropdown .dropdown-toggle {
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 10px 15px;
+}
+
+.nav-item.dropdown .dropdown-toggle:hover {
+    color: #f8f9fa;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown-menu {
+    background-color: #343a40; /* Fond plus sombre pour le menu déroulant */
+    border-radius: 0.25rem;
+}
+
+.dropdown-item {
+    color: #ffffff;
+    padding: 10px 20px;
+}
+
+.dropdown-item:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.navbar-nav .nav-item.disabled .nav-link {
+    color: rgba(255, 255, 255, 0.5); /* Liens désactivés en gris clair */
+}
+
+.form-inline .form-control {
+    width: 200px;
+    border-radius: 0.25rem;
+}
+
+.form-inline .btn {
+    background-color: #28a745; /* Couleur de fond verte pour le bouton de recherche */
+    color: #ffffff;
+    border-radius: 0.25rem;
+    padding: 5px 15px;
+}
+
+.form-inline .btn:hover {
+    background-color: #218838; /* Couleur plus foncée au survol */
+}
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        margin-top: 10px;
+    }
+
+    .form-inline {
+        margin-top: 10px;
+    }
+}
