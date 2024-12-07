@@ -98,8 +98,6 @@ src/
 │   ├── entities
 │   ├── repository
 ├── scripts/
-middleware.ts         // Middleware pour sécuriser les requêtes d'images
-next.config.js            // Configuration de Next.js
 ```
 
 ---
