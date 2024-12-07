@@ -23,8 +23,7 @@ const dataSourceOptions: DataSourceOptions = {
   password: process.env.DB_PASS /* Mot de passe pour la connexion. */,
   database: process.env.DB_NAME /* Nom de la base de données. */,
   synchronize: false /* Synchronisation du schéma. */,
-  logging: isDevelopment /* Active les logs en mode debug. */,
-
+  logging: false /* Active les logs SQL. */,
   /*  Entités à utiliser par TypeORM. */
   entities: [CardEntity, Color, Keyword] /* Chemin vers les fichiers d'entité. */,
 

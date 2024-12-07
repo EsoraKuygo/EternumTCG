@@ -1,40 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Projet: Gestion des Cartes avec Next.js et TypeScript
 
-## Getting Started
+## Introduction
+Ce projet est une application web développée avec **Next.js** et **TypeScript**, utilisant **PostgreSQL** comme base de données. L'objectif principal est de permettre la gestion et l'affichage de cartes avec des fonctionnalités avancées telles que la récupération sécurisée des images etc.
 
-First, run the development server:
+### Technologies Utilisées
+- **Next.js** (Framework React)
+- **TypeScript** (Langage typé pour JavaScript)
+- **PostgreSQL** (Base de données relationnelle)
+- **Middleware personnalisé** pour sécuriser les images
+- **API RESTful**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Statut du Projet
+Actuellement en développement.
+
+---
+
+## Installation
+
+### Prérequis
+Assurez-vous que les outils suivants sont installés sur votre machine :
+- **Node.js** (v16+ recommandé)
+- **npm** ou **yarn**
+- **PostgreSQL** (v13+ recommandé)
+
+### Étapes d'installation
+1. Clonez le dépôt :
+   ```bash
+   git clone https://github.com//EsoraKuygo/EternumTCG.git
+   ```
+2. Accédez au dossier du projet :
+   ```bash
+   cd eternumtcg
+   ```
+3. Installez les dépendances :
+   ```bash
+   npm install
+   ```
+4. Configurez les variables d'environnement dans un fichier `.env.local` :
+   ```env
+   DATABASE_URL=postgresql://user:password@localhost:5432/nom_de_la_base
+   NEXT_PUBLIC_API_URL=http://localhost:3000/api
+   ```
+5. Lancez le projet en mode développement :
+   ```bash
+   npm run dev
+   ```
+6. Accédez à l'application via [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Utilisation
+
+### Navigation
+- **Page principale** : Affiche une liste des cartes avec leurs informations principales.
+- **Fonctionnalités** :
+  - Chargement dynamique des cartes depuis une base de données.
+  - Affichage sécurisé des images via des middlewares.
+
+---
+
+## API
+
+### Routes principales
+- `GET /api/cards` : Récupère toutes les cartes.
+- `GET /api/images/:imageName` : Récupère une image de manière sécurisée.
+
+### Exemple d'endpoint
+#### `GET /api/cards`
+**Description** : Retourne une liste des cartes avec leurs métadonnées.
+
+**Réponse :**
+```json
+[
+  {
+    "id": 11,
+    "name": "Luna, Aggressive Storyteller",
+    "mana_cost": "2{B}{U}",
+    "attack": 5,
+    "defense": 3,
+    "img": "src/img/LunaAggressiveStoryteller.png",
+    "rarity_id": 2,
+    "rules_text": "When Luna, Aggressive Storyteller enters the battlefield, look at the top three cards of your library..."
+  }
+]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Arborescence du Projet
+```
+src/
+├── app/
+│   ├── api        
+│   ├── page.tsx         // Page principale
+├── img/          // Images des cartes
+├── database/             // Gestion de la base de données
+│   ├── entities
+│   ├── repository
+├── scripts/
+middleware.ts         // Middleware pour sécuriser les requêtes d'images
+next.config.js            // Configuration de Next.js
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+---
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Contribution
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Forkez le dépôt.
+2. Créez une branche pour vos modifications :
+   ```bash
+   git checkout -b feature/ma-feature
+   ```
+3. Commitez vos changements :
+   ```bash
+   git commit -m "Ajout d'une nouvelle fonctionnalité"
+   ```
+4. Pushez vers votre branche :
+   ```bash
+   git push origin feature/ma-feature
+   ```
+5. Ouvrez une Pull Request.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
