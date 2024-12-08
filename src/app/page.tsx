@@ -88,13 +88,9 @@ export default function HomePage() {
             <img
               src={card.img} // Utilisation directe du lien de l'image
               alt={card.name}
-              style={{ maxWidth: "100%", maxHeight: "150px", marginBottom: "10px" }}
+              style={{ maxWidth: "300%", maxHeight: "300px", marginBottom: "10px" }}
             />
             <h3>{card.name}</h3>
-            <p>Mana Cost: {card.mana_cost}</p>
-            <p>Type: {card.type}</p>
-            <p>Rarity: {card.rarity}</p>
-            <p>{card.flavor_text}</p>
           </div>
         ))}
       </div>
