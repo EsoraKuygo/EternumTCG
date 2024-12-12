@@ -55,6 +55,22 @@ async findByKeyWord(keywordName: string): Promise<CardEntity[]> {
     .getMany();
 }
 
+/**
+ * Recherche les cartes dont le nom contient partiellement la chaîne donnée,
+ * et filtre par type si un type est fourni.
+ * @param partialName - Partie du nom de la carte.
+ * @param typeId - L'identifiant du type de carte.
+ * @returns Liste des cartes correspondantes.
+ */
+async findByPartialNameAndType(partialName: string, typeId: number): Promise<CardEntity[]> {
+  return this.repository.find({
+    where: {
+      name: ILike(`%${partialName}%`),
+      type_id: typeId, // Filtrage par type
+    },
+  });
+}
+
 
 /**
  * Recherche les cartes dont le nom contient partiellement la chaîne donnée.
