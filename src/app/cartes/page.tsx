@@ -93,11 +93,11 @@ interface Card {
   const cardTypes = [
     { id: 1, label: "Creature" },
     { id: 2, label: "Sorcery" },
-    { id: 3, label: "Instant" },
+    { id: 3, label: "Enchantment" },
     { id: 4, label: "Artifact" },
-    { id: 5, label: "Enchantment" },
+    { id: 5, label: "Instant " },
     { id: 6, label: "Planeswalker" },
-    { id: 7, label: "Land" },
+    { id: 7, label: "Legendary Creature" },
   ];
 
   return (
@@ -108,7 +108,7 @@ interface Card {
       <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
         {cardTypes.map((type) =>
           renderButton(
-            `Type: ${type.label}`,
+            `${type.label}`,
             () => handleFilterByType(type.id),
             {
               backgroundColor: selectedType === type.id ? "#007BFF" : "#ddd",
@@ -175,7 +175,6 @@ interface Card {
             style={{
               border: "1px solid #ccc",
               borderRadius: "8px",
-              padding: "5px",
               textAlign: "center",
               boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
             }}
