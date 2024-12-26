@@ -4,15 +4,15 @@ export default function Home() {
   const items = [
     {
       image: "/img/chibiAlex.png",
-      text: "Ceci est la description de la première image.",
+      text: "There is the alex deck ! A deck that focus on polymorph creature ! The more you control, the better they become !",
     },
     {
       image: "/img/chibiLuna.png",
-      text: "Voici un texte pour accompagner la seconde image.",
+      text: "A luna deck? focusing on horror and knowing your cards in advance ? really ? yes.",
     },
     {
       image: "/img/chibiNova.png",
-      text: "Description pour la troisième image ici.",
+      text: "is this a nova deck that even i still dont know how it will work ? yeah. it is.",
     },
   ];
 

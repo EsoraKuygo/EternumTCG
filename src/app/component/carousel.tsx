@@ -81,7 +81,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
           gap: 2rem;
         }
         img {
-          width: 50%; /* Taille de l'image */
+          width: 25%; /* Taille de l'image */
           height: auto;
           object-fit: cover;
           border-radius: 8px;
