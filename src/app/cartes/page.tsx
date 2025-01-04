@@ -101,6 +101,8 @@ interface Card {
   ];
 
   return (
+    <div>
+      
     <div style={{ padding: "20px" }}>
       <h1>Welcome to the Card Library</h1>
 
@@ -188,6 +190,7 @@ interface Card {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }
